@@ -61,7 +61,7 @@ const login = async (req, res) => {
 
     const token = jwt.sign(
       { id: user[0].id },
-      "stackprep_secret",
+      process.env.JWT_SECRET,
       { expiresIn: "7d" }
     );
 
